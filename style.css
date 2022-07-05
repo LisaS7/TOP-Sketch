@@ -2,8 +2,16 @@
     --grid-size: 10;
 }
 
+header {
+    text-align: center;
+    margin: 20px;
+}
+
 #outer-box {
     display: grid;
+    margin: auto;
+    max-width: 75vh;
+    max-height: 75vh;
     grid-template-rows: repeat(var(--grid-size), 1fr);
     grid-template-columns: repeat(var(--grid-size), 1fr);
 }

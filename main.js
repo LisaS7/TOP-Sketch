@@ -16,7 +16,7 @@ function makeGrid(gridSize) {
     outerDiv.style.setProperty('--grid-size', gridSize)
     for (i = 1; i <= (gridSize * gridSize); i++) {
         const newCell = document.createElement('div');
-        newCell.textContent = i;
+        // newCell.textContent = i;
 
         newCell.addEventListener('mouseover', () => {mouseCell(newCell)})
 
