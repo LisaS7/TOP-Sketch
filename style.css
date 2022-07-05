@@ -1,0 +1,19 @@
+:root {
+    --grid-size: 10;
+}
+
+#outer-box {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+}
+
+.grid-cell {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.filled-cell {
+    background-color: black;
+}
