@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 
 :root {
     --background: #1a1b41;
+    --light: #e8ebe4;
     --bright: #3772ff;
+    --contrast: #72a1e5;
+    --dull: #595758;
+
 }
 
 body {
+    font-family: 'Raleway', sans-serif;
     background-color: var(--background);
+    color: var(--light);
+    text-align: center;
 }
 
 h1 {
@@ -19,23 +27,144 @@ header {
     margin: 20px;
 }
 
-.pad-frame {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+hr {
+    width: 95%;
+    color: var(--dull);
+    margin: 1vh 0px 3vh 0px;
+}
+
+button {
+    display: inline-block;
+    background-color: var(--light);
+    padding: 1vh;
+    border: none;
+    border-radius: 1vh;
+}
+
+
+
+/* CONTROLS */
+
+#control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin: 1vw 5vw;
+    padding: 2vw;
+    border: 2px solid var(--contrast);
+
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5vh;
+}
+
+.slider {
+    width: 100%;
+    margin-top: 2vw;
+}
+
+#pen-color{
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+.color-dot {
+    border-radius: 50%;
+    height: 2vw;
+    width: 2vw;
+    display: inline-block;
+    background-color: slateblue;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .toggle {
+    background-color: #2196F3;
+}
+
+input:focus + .toggle {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.toggle.round {
+    border-radius: 34px;
+}
+
+.toggle.round:before {
+    border-radius: 50%;
+}
+
+
+/* GRID */
+
+.pad-frame {
+    display: flex;
+    
+}
+
 #pad-body {
     background-color: whitesmoke;
+    box-shadow: 5px 5px 5px #888888;
     display: grid;
-    margin: auto;
-    width: 70rem;
-    height: 70rem;
 }
 
 .grid-cell {
     border: 1px solid #ddd;
-    text-align: center;
 }
 
 .filled-cell {

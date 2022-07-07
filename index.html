@@ -5,18 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
     <title>SketchPad</title>
 </head>
 <body>
     <header>
         <h1>SketchPad</h1>
-        <input id="grid-size" type="number"><button id="btnDraw">Draw Grid</button>
-        <br><br>
-        <button id="btnClear">Clear Grid</button>
+        
     </header>
 
     <main>
+        <div id="control-panel">
+            <div id="control-draw" class="control-item">
+                <button id="btnDraw">Create Grid</button>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="30" class="slider" id="size-slider">
+                    <label for="size-slider" id="size-label">Select grid size</label>
+                  </div>
+                
+            </div>
+            <hr>
+            <button id="btnClear" class="control-item">Clear Grid</button>
+            <hr>
+            <div id="control-color" class="control-item">
+                
+                <label for="pen-color">
+                    <span id="pen-dot" class="color-dot"></span>
+                    <input type="color" id="pen-color" name="pen-color" value="#e66465">
+                    Choose colour
+                </label>
+
+                <!-- <button id="btnRandomColor" value="OFF">Random Colours</button> -->
+                <div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span id="btnRandomColor" class="toggle round" value="OFF"></span>
+                    </label>
+                    <label id="randomToggleLabel">Random colours</label>
+                </div>
+            </div>
+        </div>
         <div class="pad-frame">
             <div id="pad-body" class="flex-container"></div>
         </div>
