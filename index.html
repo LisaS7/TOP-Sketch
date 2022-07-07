@@ -15,33 +15,45 @@
 
     <main>
         <div id="control-panel">
-            <div id="control-draw" class="control-item">
+            <div id="control-draw" class="control-section">
                 <button id="btnDraw">Create Grid</button>
                 <div class="slidecontainer">
                     <input type="range" min="1" max="100" value="30" class="slider" id="size-slider">
-                    <label for="size-slider" id="size-label">Select grid size</label>
+                    <div class="center-label"><label for="size-slider" id="size-label">Select grid size</label></div>
                   </div>
-                
             </div>
             <hr>
-            <button id="btnClear" class="control-item">Clear Grid</button>
+            <button id="btnClear" class="control-section">Clear Grid</button>
             <hr>
-            <div id="control-color" class="control-item">
-                
-                <label for="pen-color">
-                    <span id="pen-dot" class="color-dot"></span>
-                    <input type="color" id="pen-color" name="pen-color" value="#e66465">
-                    Choose colour
-                </label>
-
-                <!-- <button id="btnRandomColor" value="OFF">Random Colours</button> -->
-                <div>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span id="btnRandomColor" class="toggle round" value="OFF"></span>
-                    </label>
-                    <label id="randomToggleLabel">Random colours</label>
-                </div>
+            <div id="control-color">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="pen-color">
+                                <div class="control-item">
+                                    <span id="pen-dot" class="color-dot"></span>
+                                    <input type="color" id="pen-color" name="pen-color" value="#e66465">
+                                </div>
+                            </label>
+                        </td>
+                        <td>
+                            <p>Choose Colour</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="switch">
+                                <div class="control-item">
+                                    <input type="checkbox">
+                                    <span id="btnRandomColor" class="toggle round" value="OFF"></span>
+                                </div>
+                            </label>
+                        </td>
+                        <td>
+                            <p>Random Colours</p>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="pad-frame">
