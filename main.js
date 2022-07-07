@@ -1,4 +1,5 @@
 const sketchpadBody = document.getElementById('pad-body');
+const maxWidth = 400;
 
 // BUTTONS
 document.getElementById('btnDraw').addEventListener('click', refreshGrid);
@@ -15,24 +16,32 @@ function clearCells() {
 function makeGrid() {
     const gridSize = setGridSize();  
     for (i = 1; i <= (gridSize * gridSize); i++) {
-        const newCell = document.createElement('div');
-        newCell.addEventListener('mouseover', () => {mouseCell(newCell)});
-        newCell.textContent = i;
-        sketchpadBody.appendChild(newCell).classList.add('grid-cell');
+        const cell = makeCell();
+        setCellSize(cell, gridSize);
     }
+}
+
+function makeCell() {
+    const newCell = document.createElement('div');
+    newCell.addEventListener('mouseover', () => {mouseCell(newCell)});
+    sketchpadBody.appendChild(newCell).classList.add('grid-cell');
+    return newCell;
 }
 
 
 function setGridSize() {
     const gridSize = document.getElementById('grid-size').value;
-    let gridWidth = sketchpadBody.offsetWidth / gridSize;
     if (gridSize < 101 && gridSize > 0) {
-        sketchpadBody.style.gridTemplateRows = `repeat(${gridSize}, ${gridWidth}px, 1fr)`;
+        sketchpadBody.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
         sketchpadBody.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
         return gridSize;
     } else {
         alert('Please enter a number between 1 and 100');
     }
+}
+
+function setCellSize(cell, gridSize) {
+    cell.style.padding = `${maxWidth/gridSize}px`;
 }
 
 

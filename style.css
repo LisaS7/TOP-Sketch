@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+:root {
+    --background: #1a1b41;
+    --bright: #3772ff;
+}
+
+body {
+    background-color: var(--background);
+}
+
+h1 {
+    font-family: 'Rock Salt', cursive;
+    color: var(--bright);
+}
+
 header {
     text-align: center;
     margin: 20px;
@@ -6,21 +22,18 @@ header {
 .pad-frame {
     display: flex;
     justify-content: center;
-    width: 75vh;
-    height: 75vh;
+    align-items: center;
 }
 
 #pad-body {
+    background-color: whitesmoke;
     display: grid;
-    /* margin: auto; */
-    width: 600px;
-    height: 600px;
-    /* grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(10, 1fr); */
+    margin: auto;
+    width: 70rem;
+    height: 70rem;
 }
 
 .grid-cell {
-    padding: 1em;
     border: 1px solid #ddd;
     text-align: center;
 }
