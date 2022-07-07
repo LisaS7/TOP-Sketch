@@ -11,11 +11,7 @@ newGrid() // create initial grid when page loads
 
 // CONTROL BUTTONS
 function toggle(button){
-    if (button.target.value==="ON") {
-        button.target.value="OFF";
-    } else {
-        button.target.value="ON";
-    }
+    button.target.value=(button.target.value==='ON')?'OFF':'ON';
 }
 
 document.getElementById('btnDraw').addEventListener('click', newGrid);
@@ -71,7 +67,7 @@ function newGrid() {
 
 // COLOURING
 let penColor = 'slateblue';
-const colorOptions = ["blue", "green", "red", "yellow"];
+const colorOptions = ["purple", "deeppink", "limegreen", "forestgreen", "turquoise", "darkblue", "dodgerblue", "crimson", "gold"];
 
 function mouseCell(cell) {
     if (btnRandomColor.value === 'ON') {
