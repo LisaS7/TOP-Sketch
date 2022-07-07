@@ -3,7 +3,14 @@ header {
     margin: 20px;
 }
 
-#outer-box {
+.pad-frame {
+    display: flex;
+    justify-content: center;
+    width: 75vh;
+    height: 75vh;
+}
+
+#pad-body {
     display: grid;
     /* margin: auto; */
     width: 600px;

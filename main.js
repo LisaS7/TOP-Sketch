@@ -1,4 +1,4 @@
-const outerDiv = document.getElementById('outer-box');
+const sketchpadBody = document.getElementById('pad-body');
 
 // BUTTONS
 document.getElementById('btnDraw').addEventListener('click', refreshGrid);
@@ -18,16 +18,17 @@ function makeGrid() {
         const newCell = document.createElement('div');
         newCell.addEventListener('mouseover', () => {mouseCell(newCell)});
         newCell.textContent = i;
-        outerDiv.appendChild(newCell).classList.add('grid-cell');
+        sketchpadBody.appendChild(newCell).classList.add('grid-cell');
     }
 }
 
 
 function setGridSize() {
     const gridSize = document.getElementById('grid-size').value;
+    let gridWidth = sketchpadBody.offsetWidth / gridSize;
     if (gridSize < 101 && gridSize > 0) {
-        outerDiv.style.gridTemplateRows = `repeat(${gridSize}), 1fr)`;
-        outerDiv.style.gridTemplateColumns = `repeat(${gridSize}), 1fr)`;
+        sketchpadBody.style.gridTemplateRows = `repeat(${gridSize}, ${gridWidth}px, 1fr)`;
+        sketchpadBody.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
         return gridSize;
     } else {
         alert('Please enter a number between 1 and 100');
