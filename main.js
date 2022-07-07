@@ -1,7 +1,7 @@
 const outerDiv = document.getElementById('outer-box');
 
 // BUTTONS
-document.getElementById('btnDraw').addEventListener('click', makeGrid);
+document.getElementById('btnDraw').addEventListener('click', refreshGrid);
 document.getElementById('btnClear').addEventListener('click', clearCells);
 
 
@@ -13,11 +13,11 @@ function clearCells() {
 
 
 function makeGrid() {
-    removeOldGrid();
     const gridSize = setGridSize();  
     for (i = 1; i <= (gridSize * gridSize); i++) {
         const newCell = document.createElement('div');
         newCell.addEventListener('mouseover', () => {mouseCell(newCell)});
+        newCell.textContent = i;
         outerDiv.appendChild(newCell).classList.add('grid-cell');
     }
 }
@@ -26,7 +26,8 @@ function makeGrid() {
 function setGridSize() {
     const gridSize = document.getElementById('grid-size').value;
     if (gridSize < 101 && gridSize > 0) {
-        outerDiv.style.setProperty('--grid-size', gridSize);
+        outerDiv.style.gridTemplateRows = `repeat(${gridSize}), 1fr)`;
+        outerDiv.style.gridTemplateColumns = `repeat(${gridSize}), 1fr)`;
         return gridSize;
     } else {
         alert('Please enter a number between 1 and 100');
@@ -34,8 +35,9 @@ function setGridSize() {
 }
 
 
-function removeOldGrid() {
+function refreshGrid() {
     document.querySelectorAll('.grid-cell').forEach(cell => cell.remove());
+    makeGrid()
 }
 
 
