@@ -4,7 +4,7 @@ The Odin Project [etch-a-sketch exercise](https://www.theodinproject.com/lessons
 [Live Demo](https://lisas7.github.io/sketch/)
 
 
-> Note: this project doesn't work on mobile.
+> Note: this project doesn't work on mobile yet.
 
 
 What I learned:
